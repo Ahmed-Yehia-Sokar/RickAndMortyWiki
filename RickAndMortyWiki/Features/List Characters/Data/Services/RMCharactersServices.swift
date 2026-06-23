@@ -9,7 +9,8 @@ import Foundation
 
 struct RMCharactersServicesProvider {
     static func provide() -> RMCharactersServices {
-        RMCharactersServices()
+        let apiClient = ApiClient()
+        return RMCharactersServices(apiClient: apiClient)
     }
 }
 
@@ -18,7 +19,7 @@ struct RMCharactersServices: RMCharactersServicesContract {
     private let apiClient: ApiClientContract
 
     // MARK: - public methods
-    init(apiClient: ApiClientContract = ApiClient()) {
+    init(apiClient: ApiClientContract) {
         self.apiClient = apiClient
     }
     
