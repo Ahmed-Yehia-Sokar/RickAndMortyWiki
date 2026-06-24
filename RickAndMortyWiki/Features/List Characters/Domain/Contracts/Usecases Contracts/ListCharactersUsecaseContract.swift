@@ -6,5 +6,7 @@
 //
 
 protocol ListCharactersUsecaseContract {
+    var isLoading: Bool { get }
     func loadNextPage() async -> Result<[RMCharacter], Error>
+    func reset()
 }

@@ -11,10 +11,10 @@ import Alamofire
 enum RMCharactersApiRouter: ApiRouterContract {
     case fetchRMCharacters(pageNumber: Int)
     
-    var method: HTTPMethod {
+    var method: String {
         switch self {
         case .fetchRMCharacters:
-            return .get
+            return HTTPMethod.get.rawValue
         }
     }
     var path: String {
@@ -23,7 +23,7 @@ enum RMCharactersApiRouter: ApiRouterContract {
             return "\(ApiConstants.baseUrl)/character"
         }
     }
-    var parameters: Parameters {
+    var parameters: [String: Any] {
         switch self {
         case .fetchRMCharacters(let pageNumber):
             return [

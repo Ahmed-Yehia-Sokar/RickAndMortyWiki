@@ -17,8 +17,8 @@ class ListCharactersUsecase: ListCharactersUsecaseContract {
     private let services: RMCharactersServicesContract
     private var loadedCharacters = [RMCharacter]()
     private var currentPage = 0
-    private var isLoading = false
     private var hasNextPage = true
+    private(set) var isLoading = false
 
     // MARK: - public methods
     init(services: RMCharactersServicesContract) {
@@ -50,5 +50,12 @@ class ListCharactersUsecase: ListCharactersUsecaseContract {
             }
             return .success(loadedCharacters)
         }
+    }
+    
+    func reset() {
+        loadedCharacters.removeAll()
+        currentPage = 0
+        hasNextPage = true
+        isLoading = false
     }
 }

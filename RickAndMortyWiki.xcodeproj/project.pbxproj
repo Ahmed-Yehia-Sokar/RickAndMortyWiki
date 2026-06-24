@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		841BB1BD2FEA813000A1C108 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 841BB1BC2FEA813000A1C108 /* Alamofire */; };
+		841BB1E42FEAAA9400A1C108 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 841BB1E32FEAAA9400A1C108 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				841BB1E42FEAAA9400A1C108 /* Kingfisher in Frameworks */,
 				841BB1BD2FEA813000A1C108 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,6 +120,7 @@
 			name = RickAndMortyWiki;
 			packageProductDependencies = (
 				841BB1BC2FEA813000A1C108 /* Alamofire */,
+				841BB1E32FEAAA9400A1C108 /* Kingfisher */,
 			);
 			productName = RickAndMortyWiki;
 			productReference = 841BB17B2FEA798000A1C108 /* RickAndMortyWiki.app */;
@@ -203,6 +206,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				841BB1BB2FEA813000A1C108 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				841BB1E22FEAAA9400A1C108 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 841BB17C2FEA798000A1C108 /* Products */;
@@ -589,6 +593,14 @@
 				minimumVersion = 5.12.0;
 			};
 		};
+		841BB1E22FEAAA9400A1C108 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.10.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -596,6 +608,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 841BB1BB2FEA813000A1C108 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		841BB1E32FEAAA9400A1C108 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 841BB1E22FEAAA9400A1C108 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
