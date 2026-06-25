@@ -15,9 +15,9 @@ struct ListCharactersUsecaseProvider {
 class ListCharactersUsecase: ListCharactersUsecaseContract {
     // MARK: - properties
     private let services: RMCharactersServicesContract
-    private var loadedCharacters = [RMCharacter]()
-    private var currentPage = 0
-    private var hasNextPage = true
+    private(set) var loadedCharacters = [RMCharacter]()
+    private(set) var currentPage = 0
+    private(set) var hasNextPage = true
     private(set) var isLoading = false
 
     // MARK: - public methods

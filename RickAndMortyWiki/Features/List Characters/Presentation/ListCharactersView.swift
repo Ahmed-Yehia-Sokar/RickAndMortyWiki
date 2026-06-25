@@ -15,9 +15,11 @@ struct ListCharactersView: View {
             List {
                 ForEach(viewModel.charactersList.indices, id: \.self) { index in
                     NavigationLink {
-                        let selectedCharacter = viewModel.charactersList[index]
-                        let displayCharacterDetailsViewModel = DisplayCharacterDetailsViewModelProvider.provide(withCharacter: selectedCharacter)
-                        DisplayCharacterDetailsView(viewModel: displayCharacterDetailsViewModel)
+                        if index <= viewModel.charactersList.count - 1 {
+                            let selectedCharacter = viewModel.charactersList[index]
+                            let displayCharacterDetailsViewModel = DisplayCharacterDetailsViewModelProvider.provide(withCharacter: selectedCharacter)
+                            DisplayCharacterDetailsView(viewModel: displayCharacterDetailsViewModel)
+                        }
                     } label: {
                         CharacterView(rmCharacter: viewModel.charactersList[index])
                     }

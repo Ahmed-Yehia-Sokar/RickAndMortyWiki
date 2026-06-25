@@ -17,6 +17,7 @@ struct DisplayCharacterDetailsView: View {
                 characterImage
                 characterNameText
                 detailsList
+                Divider()
                 episodesSection
             }
             .padding()
