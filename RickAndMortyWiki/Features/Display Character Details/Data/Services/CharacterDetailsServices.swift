@@ -7,6 +7,13 @@
 
 import Foundation
 
+struct CharacterDetailsServicesProvider {
+    static func provide() -> CharacterDetailsServices {
+        let apiClient = ApiClient()
+        return CharacterDetailsServices(apiClient: apiClient)
+    }
+}
+
 struct CharacterDetailsServices: CharacterDetailsServicesContract {
     // MARK: - properties
     private let apiClient: ApiClientContract
