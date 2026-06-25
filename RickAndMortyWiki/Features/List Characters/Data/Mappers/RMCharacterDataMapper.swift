@@ -21,7 +21,7 @@ struct RMCharacterDataMapper {
             let gender = characterInfo.getString("gender")
             let status = characterInfo.getString("status")
             let species = characterInfo.getString("species")
-            let episodes = characterInfo.getArray("episodes") as [String]
+            let episodes = characterInfo.getArray("episode") as [String]
             var origin = characterInfo.getString("origin")
             var location = ""
             

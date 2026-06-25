@@ -17,8 +17,12 @@ struct DisplayCharacterDetailsView: View {
                 characterImage
                 characterNameText
                 detailsList
+                episodesSection
             }
             .padding()
+        }
+        .task {
+            await viewModel.fetchEpisodes()
         }
     }
 
@@ -67,6 +71,52 @@ struct DisplayCharacterDetailsView: View {
                 .bold()
             Spacer()
             Text(value)
+        }
+    }
+
+    private var episodesSection: some View {
+        VStack(alignment: .leading, spacing: 12.0) {
+            Text("Episodes")
+                .font(.headline)
+            
+            switch viewModel.episodesState {
+            case .loading:
+                HStack {
+                    Spacer()
+                    ProgressView()
+                    Spacer()
+                }
+            case .empty:
+                Text("No episodes.")
+            case .loaded(let episodes):
+                VStack(spacing: 8.0) {
+                    ForEach(episodes, id: \.code) { episode in
+                        episodeRow(episode)
+                    }
+                }
+            case .error(let message):
+                VStack(alignment: .leading, spacing: 8.0) {
+                    Text(message)
+                        .foregroundColor(.red)
+                    Button("Retry") {
+                        Task {
+                            await viewModel.fetchEpisodes()
+                        }
+                    }
+                }
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
+    private func episodeRow(_ episode: Episode) -> some View {
+        HStack {
+            Text(episode.code)
+                .bold()
+            Text(episode.name)
+            Spacer()
+            Text(episode.airDate)
+                .foregroundColor(.secondary)
         }
     }
 }
