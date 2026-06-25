@@ -60,7 +60,11 @@ struct CharacterView: View {
 #Preview {
     let character = RMCharacter(image: "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
                                 name: "Rick",
+                                gender: "Male",
                                 status: "Alive",
-                                species: "Human")
+                                species: "Human",
+                                origin: "USA",
+                                location: "USA",
+                                episodes: ["https://rickandmortyapi.com/api/episode/1"])
     CharacterView(rmCharacter: character)
 }

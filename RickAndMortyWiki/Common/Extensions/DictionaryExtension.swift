@@ -8,4 +8,12 @@ extension Dictionary {
         
         return defaultValue
     }
+    
+    func getArray<T>(_ key: Key, defaultValue: [T] = []) -> [T] {
+        if let value = self[key] as? [T] {
+            return value
+        }
+
+        return defaultValue
+    }
 }
