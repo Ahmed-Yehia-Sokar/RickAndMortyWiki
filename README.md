@@ -24,3 +24,7 @@ This iOS application fetches a list of characters from the "Rick and Morty API" 
 2. Open RickAndMortyWiki.xcodeproj.
 3. Select the appropriate simulator.
 4. Click the "Play" button or press Command + R to build and run the app.
+
+<img width="1170" height="2532" alt="Simulator Screenshot - iPhone 16e - 2026-06-25 at 16 28 25" src="https://github.com/user-attachments/assets/ebd2bdb7-af7c-4fa5-ad11-ed5d7f62c5e6" />
+<img width="1170" height="2532" alt="Simulator Screenshot - iPhone 16e - 2026-06-25 at 16 28 36" src="https://github.com/user-attachments/assets/1e216a0b-1d72-45bc-afa9-00c233f3d055" />
+
